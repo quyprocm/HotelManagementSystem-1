@@ -1,6 +1,8 @@
 package model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -27,6 +29,7 @@ public class Room implements Serializable {
     private String type;
 
     @Column(name = "price", nullable = false)
+    @Min(value = 1)
     private float price;
 
     @Column(name = "description", length = 200)

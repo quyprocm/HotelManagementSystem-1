@@ -24,4 +24,10 @@ public class RoomDAOTesting {
 
     }
 
+    @Test
+    public void findHotelByIdRoom() {
+        Room room = roomDAO.findById(Room.class, 1);
+        System.out.println(room.getHotel());
+    }
+
 }
