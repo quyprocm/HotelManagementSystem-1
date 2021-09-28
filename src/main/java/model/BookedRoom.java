@@ -36,7 +36,7 @@ public class BookedRoom implements Serializable {
     @Column(name = "price", nullable = false)
     private float price;
 
-    @Column(name = "note", nullable = false, length = 200)
+    @Column(name = "note", length = 200)
     private String note;
 
     @Column(name = "amount", nullable = false)
@@ -95,4 +95,35 @@ public class BookedRoom implements Serializable {
         this.checkout = checkout;
     }
 
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public boolean isCheckIn() {
+        return isCheckIn;
+    }
+
+    public void setCheckIn(boolean checkIn) {
+        isCheckIn = checkIn;
+    }
 }

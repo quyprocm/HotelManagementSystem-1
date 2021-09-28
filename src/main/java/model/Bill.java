@@ -24,13 +24,13 @@ public class Bill implements Serializable {
     @Column(name = "payment_date", nullable = false)
     private Date paymentDate;
 
-    @Column(name = "amount", nullable = false)
-    private float amount;
+    @Column(name = "total_amount", nullable = false)
+    private float TotalAmount;
 
     @Column(name = "payment_type", nullable = false, length = 50)
     private String paymentType;
 
-    @Column(name = "note", nullable = false, length = 200)
+    @Column(name = "note", length = 200)
     private String note;
 
     public Bill() {}
@@ -67,12 +67,12 @@ public class Bill implements Serializable {
         this.paymentDate = paymentDate;
     }
 
-    public float getAmount() {
-        return amount;
+    public float getTotalAmount() {
+        return TotalAmount;
     }
 
-    public void setAmount(float amount) {
-        this.amount = amount;
+    public void setTotalAmount(float totalAmount) {
+        TotalAmount = totalAmount;
     }
 
     public String getPaymentType() {

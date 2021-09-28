@@ -32,10 +32,10 @@ public class Booking implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date bookingDate;
 
-    @Column(name = "total_amount", nullable = false)
-    private float totalAmount;
+    @Column(name = "deposit", nullable = false)
+    private float deposit;
 
-    @Column(name = "note", nullable = false, length = 200)
+    @Column(name = "note", length = 200)
     private String note;
 
     public Booking() {}
@@ -88,12 +88,12 @@ public class Booking implements Serializable {
         this.bookingDate = bookingDate;
     }
 
-    public float getTotalAmount() {
-        return totalAmount;
+    public float getDeposit() {
+        return deposit;
     }
 
-    public void setTotalAmount(float totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setDeposit(float deposit) {
+        this.deposit = deposit;
     }
 
     public String getNote() {

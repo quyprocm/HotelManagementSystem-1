@@ -29,7 +29,7 @@ public class Room implements Serializable {
     @Column(name = "price", nullable = false)
     private float price;
 
-    @Column(name = "description", nullable = false, length = 200)
+    @Column(name = "description", length = 200)
     private String description;
 
     public Room() {}
