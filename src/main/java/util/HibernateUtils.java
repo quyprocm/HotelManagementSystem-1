@@ -22,7 +22,7 @@ public class HibernateUtils {
         properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         properties.put(Environment.URL, "jdbc:mysql://localhost:3306/hotelManagement");
         properties.put(Environment.USER, "root");
-        properties.put(Environment.PASS, "matkhau1995");
+        properties.put(Environment.PASS, "quylm123");
         properties.put(Environment.SHOW_SQL, "true");
         properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         properties.put(Environment.HBM2DDL_AUTO, "update");

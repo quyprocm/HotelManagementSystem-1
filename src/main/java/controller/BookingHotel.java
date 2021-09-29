@@ -34,6 +34,7 @@ public class BookingHotel {
         bookedRoom1.setAmount(0);
         bookedRoom1.setIsCheckIn(true);
         bookedRoom1.setRoom(room1);
+        bookedRoom1.setNote("AAA");
 
         BookedRoom bookedRoom2 = new BookedRoom();
         Room room2 = roomService.findRoomById(2);
@@ -43,19 +44,23 @@ public class BookingHotel {
         bookedRoom2.setAmount(0);
         bookedRoom2.setIsCheckIn(true);
         bookedRoom2.setRoom(room2);
+        bookedRoom2.setNote("AAA");
 
         Booking booking = new Booking();
         booking.setBookingDate(new Date());
         booking.setTotalAmount(bookedRoom1.getPrice() + bookedRoom2.getPrice());
         booking.setClient(client);
         booking.setUser(user);
+        booking.setNote("");
         bookedRoom1.setBooking(booking);
         bookedRoom2.setBooking(booking);
 
         Set<BookedRoom> list = new HashSet<>();
-        list.add(bookedRoom1);
-        list.add(bookedRoom2);
-        booking.setListOfBookedRoom(list);
+//        list.add(bookedRoom1);
+        booking.setListOfBookedRoom(Set.of(bookedRoom1));
+//        list.add(bookedRoom2);
+        booking.setListOfBookedRoom(Set.of(bookedRoom2));
+//        booking.setListOfBookedRoom(list);
 //        booking.setListOfBookedRoom(Set.of(bookedRoom2));
 
 
