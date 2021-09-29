@@ -3,6 +3,7 @@ package model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,7 +24,7 @@ public class Booking implements Serializable {
     private Client client;
 
     @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<BookedRoom> listOfBookedRoom;
+    private Set<BookedRoom> listOfBookedRoom = new HashSet<>();
 
     @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Bill> listOfBill;
@@ -34,6 +35,9 @@ public class Booking implements Serializable {
 
     @Column(name = "deposit", nullable = false)
     private float deposit;
+
+    @Column(name = "total_amount", nullable = false)
+    private float totalAmount;
 
     @Column(name = "note", length = 200)
     private String note;
@@ -69,7 +73,7 @@ public class Booking implements Serializable {
     }
 
     public void setListOfBookedRoom(Set<BookedRoom> listOfBookedRoom) {
-        this.listOfBookedRoom = listOfBookedRoom;
+        this.listOfBookedRoom.addAll(listOfBookedRoom);
     }
 
     public Set<Bill> getListOfBill() {
@@ -102,5 +106,13 @@ public class Booking implements Serializable {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

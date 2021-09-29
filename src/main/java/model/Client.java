@@ -88,4 +88,16 @@ public class Client implements Serializable {
         this.note = note;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientId=" + clientId +
+                ", fullName='" + fullName + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", address='" + address + '\'' +
+                ", tell='" + tell + '\'' +
+                ", email='" + email + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

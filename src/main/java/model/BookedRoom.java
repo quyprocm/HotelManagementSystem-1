@@ -123,7 +123,7 @@ public class BookedRoom implements Serializable {
         return isCheckIn;
     }
 
-    public void setCheckIn(boolean checkIn) {
+    public void setIsCheckIn(boolean checkIn) {
         isCheckIn = checkIn;
     }
 }

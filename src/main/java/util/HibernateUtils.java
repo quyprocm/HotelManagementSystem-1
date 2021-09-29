@@ -38,6 +38,11 @@ public class HibernateUtils {
         config.addAnnotatedClass(Service.class);
         config.addAnnotatedClass(UsedService.class);
         config.addAnnotatedClass(User.class);
+        config.addAnnotatedClass(ClientStat.class);
+        config.addAnnotatedClass(HotelStat.class);
+        config.addAnnotatedClass(IncomeStat.class);
+        config.addAnnotatedClass(RoomStat.class);
+        config.addAnnotatedClass(ServiceStat.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(config.getProperties()).build();
