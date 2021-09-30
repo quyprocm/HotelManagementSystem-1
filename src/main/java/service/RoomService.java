@@ -11,4 +11,7 @@ public class RoomService {
 
         return roomDAO.findById(Room.class, roomId);
     }
+//    public Room findRoomByName(Class<Room> roomClass, String roomName){
+//        return roomDAO.findByName(Room.class,roomName);
+//    }
 }

@@ -1,7 +1,9 @@
 package dao;
 
 
+import model.Room;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import util.HibernateUtils;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -105,4 +107,33 @@ public abstract class AbstractDAO<T, K> {
         return null;
 
     }
+    public String findByName(Class<T> clazz, K String) {
+
+        try {
+            session = HibernateUtils.getSessionFactory().openSession();
+            return (java.lang.String) session.get(clazz, (Serializable) String);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return null;
+
+    }
+    public List<Room> search(String name) {
+
+        try{
+            session = HibernateUtils.getSessionFactory().openSession();
+//            SELECT * FROM dbo.Room j WHERE j.name LIKE :name
+            Query<Room> query = session.createNativeQuery("SELECT * FROM dbo.Room WHERE name like "+name).addEntity(Room.class);
+            return session.createNativeQuery();
+        }finally {
+            if(session != null){
+                session.close();
+            }
+        }
+    }
+
 }
